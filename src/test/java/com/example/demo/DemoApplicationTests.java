@@ -49,5 +49,46 @@ public class DemoApplicationTests {
         userRepository.findAllByUsername("葛某人").forEach(System.out ::println);
     }
 
+    @Test
+    public void findlike(){
+        //注意百分号
+        userRepository.findAllByUsernameLike("葛%").forEach(System.out ::println );
+    }
+    @Test
+    public void test5(){
+        userRepository.findUsers().forEach(System.out ::println);
+    }
+
+    @Test
+    public void test6(){
+        userRepository.findUsers2().forEach(System.out ::println);
+    }
+
+    @Test
+    public void test7(){
+        userRepository.findUsers3().forEach(System.out ::println);
+    }
+
+    @Test
+    public void test8(){
+        //数量
+        userRepository.findUsers4().forEach(System.out ::println);
+    }
+
+    @Test
+    public void test9(){
+        //数量
+        int result = userRepository.updateByusernameAndPassword2("赵某人",8);
+        System.out.println(result);
+    }
+
+    @Test
+    public void test10(){
+        //数量
+        int result = userRepository.updateByusernameAndPassword3("赵某人",8);
+        System.out.println(result);
+    }
+
+
 
 }
